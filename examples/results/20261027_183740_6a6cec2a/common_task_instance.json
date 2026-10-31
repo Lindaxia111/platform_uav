@@ -1,0 +1,75 @@
+{
+  "api_version": "0.1",
+  "task_type": "strip_allocation",
+  "coordinate_system": "local_east_north_m",
+  "seed": 7,
+  "members": [
+    {
+      "id": "UAV_1",
+      "speed_mps": 25,
+      "start_xy_m": [
+        50,
+        -60
+      ]
+    },
+    {
+      "id": "UAV_2",
+      "speed_mps": 12,
+      "start_xy_m": [
+        550,
+        -60
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "STRIP_001",
+      "x_m": 50.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    },
+    {
+      "id": "STRIP_002",
+      "x_m": 150.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    },
+    {
+      "id": "STRIP_003",
+      "x_m": 250.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    },
+    {
+      "id": "STRIP_004",
+      "x_m": 350.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    },
+    {
+      "id": "STRIP_005",
+      "x_m": 450.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    },
+    {
+      "id": "STRIP_006",
+      "x_m": 550.0,
+      "start_y_m": -60,
+      "end_y_m": 460,
+      "length_m": 520
+    }
+  ],
+  "parameters": {},
+  "constraints": {
+    "unique_assignment": true,
+    "ordering": "result_list_per_member",
+    "route_policy": "nearest_endpoint_then_strip",
+    "horizon_s": 120
+  }
+}

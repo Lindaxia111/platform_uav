@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "id": "coverage_demo",
+  "name": "双无人机区域覆盖验证",
+  "engine": {"afsim_home": "D:/afsim/afsim-2.9.0-win64", "horizon_s": 120, "wall_timeout_s": 60},
+  "modules": [
+    {"id": "TASK", "type": "coverage_task", "parameters": {"origin_lat_deg": 30, "origin_lon_deg": 110, "width_m": 600, "height_m": 400, "lane_spacing_m": 100}},
+    {"id": "FLEET", "type": "uav_fleet", "parameters": {"altitude_m": 300, "bank_angle_limit_deg": 60, "uavs": [
+      {"id": "UAV_1", "speed_mps": 25, "start_xy_m": [50, -60]},
+      {"id": "UAV_2", "speed_mps": 12, "start_xy_m": [550, -60]}
+    ]}},
+    {"id": "ALLOC", "type": "task_allocator", "parameters": {"algorithm_packages": ["algorithms/round_robin", "algorithms/capacity_greedy"], "seed": 7, "planning_budget_s": 5}},
+    {"id": "ROUTE", "type": "serpentine_router", "parameters": {"turn_padding_m": 60}},
+    {"id": "MONITOR", "type": "coverage_monitor", "parameters": {"footprint_radius_m": 60, "grid_resolution_m": 20, "sample_interval_s": 1}}
+  ],
+  "connections": [
+    {"from": "TASK.tasks", "to": "ALLOC.tasks"},
+    {"from": "FLEET.members", "to": "ALLOC.members"},
+    {"from": "ALLOC.assignment", "to": "ROUTE.assignment"},
+    {"from": "ROUTE.routes", "to": "FLEET.routes"},
+    {"from": "FLEET.trajectory", "to": "MONITOR.trajectory"},
+    {"from": "TASK.region", "to": "MONITOR.region"}
+  ],
+  "behavior": {"template": "offline_coverage_v1", "steps": ["initialize", "allocate", "build_routes", "simulate", "evaluate"]},
+  "capabilities": [{"id": "C_COVER", "name": "协同区域覆盖"}],
+  "functions": [
+    {"id": "F_ALLOC", "name": "任务分配", "module": "ALLOC"},
+    {"id": "F_ROUTE", "name": "覆盖航线生成", "module": "ROUTE"},
+    {"id": "F_EXEC", "name": "航线执行", "module": "FLEET"},
+    {"id": "F_EVAL", "name": "覆盖评价", "module": "MONITOR"}
+  ],
+  "requirements": [
+    {"id": "R_COVER", "name": "有效覆盖率", "metric": "coverage_pct", "operator": ">=", "threshold": 95, "unit": "%"},
+    {"id": "R_TIME", "name": "达到覆盖阈值的时间", "metric": "coverage_threshold_time_s", "operator": "<=", "threshold": 110, "unit": "s"}
+  ],
+  "traceability": [
+    {"requirement": "R_COVER", "capability": "C_COVER", "functions": ["F_ALLOC", "F_ROUTE", "F_EXEC", "F_EVAL"], "test_case": "TC_COVER"},
+    {"requirement": "R_TIME", "capability": "C_COVER", "functions": ["F_ALLOC", "F_ROUTE", "F_EXEC", "F_EVAL"], "test_case": "TC_TIME"}
+  ]
+}

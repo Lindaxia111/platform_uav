@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.cmd text eol=crlf
+*.aer binary
+*.png binary
+# Preserve archived evidence, including algorithm snapshots, byte for byte.
+examples/results/** -text -whitespace

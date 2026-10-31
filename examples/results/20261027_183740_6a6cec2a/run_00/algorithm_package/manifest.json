@@ -1,0 +1,6 @@
+{
+  "id": "round_robin", "name": "顺序轮询分配", "version": "0.1.0",
+  "api_version": "0.1", "category": "task_allocation", "execution_mode": "offline_plan",
+  "entrypoint": "algorithm.py:plan", "parameters": {},
+  "description": "按任务序号交替分配，不考虑速度差异；演示参照基线。"
+}

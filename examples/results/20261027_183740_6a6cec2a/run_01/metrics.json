@@ -1,0 +1,77 @@
+{
+  "metrics": {
+    "coverage_pct": 94.33333333333333,
+    "coverage_threshold_time_s": null,
+    "total_distance_m": 3954.070455248925,
+    "overlap_between_members_pct": 6.666666666666667
+  },
+  "requirements": [
+    {
+      "id": "R_COVER",
+      "name": "有效覆盖率",
+      "metric": "coverage_pct",
+      "operator": ">=",
+      "threshold": 95,
+      "unit": "%",
+      "actual": 94.33333333333333,
+      "status": "fail",
+      "reason": "未满足需求阈值",
+      "trace": [
+        {
+          "requirement": "R_COVER",
+          "capability": "C_COVER",
+          "functions": [
+            "F_ALLOC",
+            "F_ROUTE",
+            "F_EXEC",
+            "F_EVAL"
+          ],
+          "test_case": "TC_COVER"
+        }
+      ],
+      "evidence": [
+        "trajectories.json",
+        "coverage_curve.json",
+        "metrics.json",
+        "replay.aer"
+      ]
+    },
+    {
+      "id": "R_TIME",
+      "name": "达到覆盖阈值的时间",
+      "metric": "coverage_threshold_time_s",
+      "operator": "<=",
+      "threshold": 110,
+      "unit": "s",
+      "actual": null,
+      "status": "fail",
+      "reason": "未达到覆盖阈值，时间值不适用",
+      "trace": [
+        {
+          "requirement": "R_TIME",
+          "capability": "C_COVER",
+          "functions": [
+            "F_ALLOC",
+            "F_ROUTE",
+            "F_EXEC",
+            "F_EVAL"
+          ],
+          "test_case": "TC_TIME"
+        }
+      ],
+      "evidence": [
+        "trajectories.json",
+        "coverage_curve.json",
+        "metrics.json",
+        "replay.aer"
+      ]
+    }
+  ],
+  "method": {
+    "version": "coverage_grid_capsule_v1",
+    "sampling_interval_s": 1,
+    "coverage_target_pct": 95,
+    "time_resolution_note": "覆盖时刻取轨迹段终点采样时刻，段内按直线扫掠估算，弯道仍有离散化误差",
+    "assumptions": "小区域局部平面；全程启用的理想圆形足迹；网格中心代表等面积单元；不代表真实发现率"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "20261027_183740_6a6cec2a",
+  "status": "completed",
+  "model_checks": [
+    {
+      "level": "warning",
+      "path": "model_fidelity",
+      "message": "采用简化空中运动、平坦矩形区域及全程启用的理想圆形覆盖足迹；未建模探测概率、通信、碰撞、真实能耗与在线重规划"
+    }
+  ],
+  "model_sha256": "9fab4c45722f20630230db2039cf4421fd49110088ab8c83d5ef07acbeb54372",
+  "common_instance_sha256": "094417489625e5904cde249565b2f5a0070556de9599c443a7b3c2dcd697996b",
+  "runtime": {
+    "python": "3.12.9 (main, Feb 13 2025, 09:16:40)  [GCC 14.2.0 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "workbench_version": "0.1.0"
+  },
+  "experiment_scope": "single_deterministic_instance_offline_allocation",
+  "runs": [
+    {
+      "run_id": "run_00",
+      "package": "algorithms/round_robin",
+      "status": "completed",
+      "stage": "complete",
+      "algorithm": {
+        "id": "round_robin",
+        "name": "顺序轮询分配",
+        "version": "0.1.0",
+        "api_version": "0.1",
+        "category": "task_allocation",
+        "execution_mode": "offline_plan",
+        "entrypoint": "algorithm.py:plan",
+        "parameters": {},
+        "description": "按任务序号交替分配，不考虑速度差异；演示参照基线。",
+        "package_path": "C:\\Users\\Administrator\\Desktop\\成飞交付资料汇总\\相关内容\\专利\\一种基于模型的无人机智能开放式架构设计方法\\uav_workbench\\algorithms\\round_robin",
+        "sha256": "ee0d1ca34cd0f8b2f02ae8ec2f82749d76a46175ed4eae7fc9bf76ec115920ab"
+      },
+      "planning_wall_s": 0.09070300000166753,
+      "unassigned_count": 0,
+      "engine": {
+        "wall_elapsed_s": 0.21104399999967427,
+        "returncode": 0
+      },
+      "metrics": {
+        "coverage_pct": 82.33333333333333,
+        "coverage_threshold_time_s": null,
+        "total_distance_m": 3570.448781337294,
+        "overlap_between_members_pct": 8.833333333333334
+      },
+      "requirements": [
+        {
+          "id": "R_COVER",
+          "name": "有效覆盖率",
+          "metric": "coverage_pct",
+          "operator": ">=",
+          "threshold": 95,
+          "unit": "%",
+          "actual": 82.33333333333333,
+          "status": "fail",
+          "reason": "未满足需求阈值",
+          "trace": [
+            {
+              "requirement": "R_COVER",
+              "capability": "C_COVER",
+              "functions": [
+                "F_ALLOC",
+                "F_ROUTE",
+                "F_EXEC",
+                "F_EVAL"
+              ],
+              "test_case": "TC_COVER"
+            }
+          ],
+          "evidence": [
+            "trajectories.json",
+            "coverage_curve.json",
+            "metrics.json",
+            "replay.aer"
+          ]
+        },
+        {
+          "id": "R_TIME",
+          "name": "达到覆盖阈值的时间",
+          "metric": "coverage_threshold_time_s",
+          "operator": "<=",
+          "threshold": 110,
+          "unit": "s",
+          "actual": null,
+          "status": "fail",
+          "reason": "未达到覆盖阈值，时间值不适用",
+          "trace": [
+            {
+              "requirement": "R_TIME",
+              "capability": "C_COVER",
+              "functions": [
+                "F_ALLOC",
+                "F_ROUTE",
+                "F_EXEC",
+                "F_EVAL"
+              ],
+              "test_case": "TC_TIME"
+            }
+          ],
+          "evidence": [
+            "trajectories.json",
+            "coverage_curve.json",
+            "metrics.json",
+            "replay.aer"
+          ]
+        }
+      ],
+      "all_requirements_pass": false
+    },
+    {
+      "run_id": "run_01",
+      "package": "algorithms/capacity_greedy",
+      "status": "completed",
+      "stage": "complete",
+      "algorithm": {
+        "id": "capacity_greedy",
+        "name": "预计完成时间贪心分配",
+        "version": "0.1.0",
+        "api_version": "0.1",
+        "category": "task_allocation",
+        "execution_mode": "offline_plan",
+        "entrypoint": "algorithm.py:plan",
+        "parameters": {},
+        "description": "按速度、已分配路径长度及直线转场估算选择最早完成的成员；演示算法，不主张最优。",
+        "package_path": "C:\\Users\\Administrator\\Desktop\\成飞交付资料汇总\\相关内容\\专利\\一种基于模型的无人机智能开放式架构设计方法\\uav_workbench\\algorithms\\capacity_greedy",
+        "sha256": "94182a2e503cfc32566c67a05b9a6326c7acbf07a78f8435e3d45681c5df2e29"
+      },
+      "planning_wall_s": 0.10379350000221166,
+      "unassigned_count": 0,
+      "engine": {
+        "wall_elapsed_s": 0.31095880000066245,
+        "returncode": 0
+      },
+      "metrics": {
+        "coverage_pct": 94.33333333333333,
+        "coverage_threshold_time_s": null,
+        "total_distance_m": 3954.070455248925,
+        "overlap_between_members_pct": 6.666666666666667
+      },
+      "requirements": [
+        {
+          "id": "R_COVER",
+          "name": "有效覆盖率",
+          "metric": "coverage_pct",
+          "operator": ">=",
+          "threshold": 95,
+          "unit": "%",
+          "actual": 94.33333333333333,
+          "status": "fail",
+          "reason": "未满足需求阈值",
+          "trace": [
+            {
+              "requirement": "R_COVER",
+              "capability": "C_COVER",
+              "functions": [
+                "F_ALLOC",
+                "F_ROUTE",
+                "F_EXEC",
+                "F_EVAL"
+              ],
+              "test_case": "TC_COVER"
+            }
+          ],
+          "evidence": [
+            "trajectories.json",
+            "coverage_curve.json",
+            "metrics.json",
+            "replay.aer"
+          ]
+        },
+        {
+          "id": "R_TIME",
+          "name": "达到覆盖阈值的时间",
+          "metric": "coverage_threshold_time_s",
+          "operator": "<=",
+          "threshold": 110,
+          "unit": "s",
+          "actual": null,
+          "status": "fail",
+          "reason": "未达到覆盖阈值，时间值不适用",
+          "trace": [
+            {
+              "requirement": "R_TIME",
+              "capability": "C_COVER",
+              "functions": [
+                "F_ALLOC",
+                "F_ROUTE",
+                "F_EXEC",
+                "F_EVAL"
+              ],
+              "test_case": "TC_TIME"
+            }
+          ],
+          "evidence": [
+            "trajectories.json",
+            "coverage_curve.json",
+            "metrics.json",
+            "replay.aer"
+          ]
+        }
+      ],
+      "all_requirements_pass": false
+    }
+  ],
+  "differences": [
+    {
+      "metric": "coverage_pct",
+      "label": "有效覆盖率",
+      "unit": "百分点",
+      "direction": "higher",
+      "baseline": 82.33333333333333,
+      "candidate": 94.33333333333333,
+      "delta": 12.0,
+      "relative_change_pct": 14.574898785425102,
+      "note": "原始差异 = 候选 - 参照；优劣结合指标方向及任务需求判断"
+    },
+    {
+      "metric": "coverage_threshold_time_s",
+      "label": "达到覆盖阈值的时间",
+      "unit": "s",
+      "direction": "lower",
+      "baseline": null,
+      "candidate": null,
+      "delta": null,
+      "relative_change_pct": null,
+      "note": "未达覆盖阈值的时间不参与差值计算"
+    },
+    {
+      "metric": "total_distance_m",
+      "label": "总航程",
+      "unit": "m",
+      "direction": "lower",
+      "baseline": 3570.448781337294,
+      "candidate": 3954.070455248925,
+      "delta": 383.6216739116312,
+      "relative_change_pct": 10.744354488903987,
+      "note": "原始差异 = 候选 - 参照；优劣结合指标方向及任务需求判断"
+    },
+    {
+      "metric": "overlap_between_members_pct",
+      "label": "成员间重叠覆盖率",
+      "unit": "百分点",
+      "direction": "lower",
+      "baseline": 8.833333333333334,
+      "candidate": 6.666666666666667,
+      "delta": -2.166666666666667,
+      "relative_change_pct": -24.528301886792452,
+      "note": "原始差异 = 候选 - 参照；优劣结合指标方向及任务需求判断"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "id": "capacity_greedy", "name": "预计完成时间贪心分配", "version": "0.1.0",
+  "api_version": "0.1", "category": "task_allocation", "execution_mode": "offline_plan",
+  "entrypoint": "algorithm.py:plan", "parameters": {},
+  "description": "按速度、已分配路径长度及直线转场估算选择最早完成的成员；演示算法，不主张最优。"
+}

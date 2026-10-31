@@ -1,0 +1,13 @@
+{
+  "id": "round_robin",
+  "name": "顺序轮询分配",
+  "version": "0.1.0",
+  "api_version": "0.1",
+  "category": "task_allocation",
+  "execution_mode": "offline_plan",
+  "entrypoint": "algorithm.py:plan",
+  "parameters": {},
+  "description": "按任务序号交替分配，不考虑速度差异；演示参照基线。",
+  "package_path": "C:\\Users\\Administrator\\Desktop\\成飞交付资料汇总\\相关内容\\专利\\一种基于模型的无人机智能开放式架构设计方法\\uav_workbench\\algorithms\\round_robin",
+  "sha256": "ee0d1ca34cd0f8b2f02ae8ec2f82749d76a46175ed4eae7fc9bf76ec115920ab"
+}

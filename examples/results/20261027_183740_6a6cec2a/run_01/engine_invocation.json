@@ -1,0 +1,9 @@
+{
+  "command": [
+    "D:\\afsim\\afsim-2.9.0-win64\\bin\\mission.exe",
+    "scenario.txt"
+  ],
+  "working_directory": "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\10\\27\\01a17cc5-b7ad-7570-8045-d8b5c65607e9\\uav_workbench_runs\\20261027_183740_6a6cec2a\\run_01",
+  "executable_sha256": "0b8f2cc6b439f58a96129661e0c4e679270c90b7feea946fa4a1c202e581667d",
+  "wall_timeout_s": 60
+}

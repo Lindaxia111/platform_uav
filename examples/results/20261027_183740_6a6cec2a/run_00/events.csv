@@ -1,0 +1,10 @@
+! PLATFORM_ADDED,time<time>,event<string>,platform<string>,side<string>,type<string>,ps<double>,lat<lat>,lon<lon>,alt<double>,x<double>,y<double>,z<double>,heading<angle>,pitch<angle>,roll<angle>,ned_speed<double>,ned_velocity_n<double>,ned_velocity_e<double>,ned_velocity_d<double>,eci_speed<double>,eci_velocity_x<double>,eci_velocity_y<double>,eci_velocity_z<double>,ned_acceleration<double>,ned_acceleration_n<double>,ned_acceleration_e<double>,ned_acceleration_d<double>,eci_acceleration<double>,eci_acceleration_x<double>,eci_acceleration_y<double>,eci_acceleration_z<double>
+! PLATFORM_DELETED,time<time>,event<string>,platform<string>,side<string>,type<string>,ps<double>,lat<lat>,lon<lon>,alt<double>,x<double>,y<double>,z<double>,heading<angle>,pitch<angle>,roll<angle>,ned_speed<double>,ned_velocity_n<double>,ned_velocity_e<double>,ned_velocity_d<double>,eci_speed<double>,eci_velocity_x<double>,eci_velocity_y<double>,eci_velocity_z<double>,ned_acceleration<double>,ned_acceleration_n<double>,ned_acceleration_e<double>,ned_acceleration_d<double>,eci_acceleration<double>,eci_acceleration_x<double>,eci_acceleration_y<double>,eci_acceleration_z<double>
+! SIMULATION_COMPLETE,time<time>,event<string>,year<int>,month<int>,day<int>,hour<int>,minute<int>,second<int>
+! SIMULATION_STARTING,time<time>,event<string>,year<int>,month<int>,day<int>,hour<int>,minute<int>,second<int>
+0,PLATFORM_ADDED,UAV_1,,WB_AIR,
+0,PLATFORM_ADDED,UAV_2,,WB_AIR,
+0,SIMULATION_STARTING,2003,6,1,12,0,0
+120.001,SIMULATION_COMPLETE,2003,6,1,12,2,0
+120.001,PLATFORM_DELETED,UAV_1,,WB_AIR,1,30.0041,110.005,300,-5.52732810e+06,-2.36439078e+03,3.17259142e+06,6.225,0.000,0.000,0.000,0.000,0.000,0.000,403.129,0.000,-1.000,0.000,0.000,0.000,0.000,0.000,0.029,1.000,0.000,-0.000
+1.200010e+02,PLATFORM_DELETED,UAV_2,,WB_AIR,1.000000e+00,3.000138e+01,1.100037e+02,3.00000000e+02,-5.52748174e+06,-2.26784033e+03,3.17232559e+06,3.157,0.000,0.000,12.000,-1.000,-0.016,-0.000,403.128,-0.014,-1.000,-0.026,0.000,0.000,0.000,0.000,0.029,1.000,-0.029,-0.000

@@ -1,0 +1,94 @@
+{
+  "run_id": "run_01",
+  "package": "algorithms/capacity_greedy",
+  "status": "completed",
+  "stage": "complete",
+  "algorithm": {
+    "id": "capacity_greedy",
+    "name": "预计完成时间贪心分配",
+    "version": "0.1.0",
+    "api_version": "0.1",
+    "category": "task_allocation",
+    "execution_mode": "offline_plan",
+    "entrypoint": "algorithm.py:plan",
+    "parameters": {},
+    "description": "按速度、已分配路径长度及直线转场估算选择最早完成的成员；演示算法，不主张最优。",
+    "package_path": "C:\\Users\\Administrator\\Desktop\\成飞交付资料汇总\\相关内容\\专利\\一种基于模型的无人机智能开放式架构设计方法\\uav_workbench\\algorithms\\capacity_greedy",
+    "sha256": "94182a2e503cfc32566c67a05b9a6326c7acbf07a78f8435e3d45681c5df2e29"
+  },
+  "planning_wall_s": 0.10379350000221166,
+  "unassigned_count": 0,
+  "engine": {
+    "wall_elapsed_s": 0.31095880000066245,
+    "returncode": 0
+  },
+  "metrics": {
+    "coverage_pct": 94.33333333333333,
+    "coverage_threshold_time_s": null,
+    "total_distance_m": 3954.070455248925,
+    "overlap_between_members_pct": 6.666666666666667
+  },
+  "requirements": [
+    {
+      "id": "R_COVER",
+      "name": "有效覆盖率",
+      "metric": "coverage_pct",
+      "operator": ">=",
+      "threshold": 95,
+      "unit": "%",
+      "actual": 94.33333333333333,
+      "status": "fail",
+      "reason": "未满足需求阈值",
+      "trace": [
+        {
+          "requirement": "R_COVER",
+          "capability": "C_COVER",
+          "functions": [
+            "F_ALLOC",
+            "F_ROUTE",
+            "F_EXEC",
+            "F_EVAL"
+          ],
+          "test_case": "TC_COVER"
+        }
+      ],
+      "evidence": [
+        "trajectories.json",
+        "coverage_curve.json",
+        "metrics.json",
+        "replay.aer"
+      ]
+    },
+    {
+      "id": "R_TIME",
+      "name": "达到覆盖阈值的时间",
+      "metric": "coverage_threshold_time_s",
+      "operator": "<=",
+      "threshold": 110,
+      "unit": "s",
+      "actual": null,
+      "status": "fail",
+      "reason": "未达到覆盖阈值，时间值不适用",
+      "trace": [
+        {
+          "requirement": "R_TIME",
+          "capability": "C_COVER",
+          "functions": [
+            "F_ALLOC",
+            "F_ROUTE",
+            "F_EXEC",
+            "F_EVAL"
+          ],
+          "test_case": "TC_TIME"
+        }
+      ],
+      "evidence": [
+        "trajectories.json",
+        "coverage_curve.json",
+        "metrics.json",
+        "replay.aer"
+      ]
+    }
+  ],
+  "all_requirements_pass": false
+}

@@ -1,0 +1,30 @@
+{
+  "status": "ok",
+  "assignments": [
+    {
+      "task_id": "STRIP_001",
+      "uav_id": "UAV_1"
+    },
+    {
+      "task_id": "STRIP_002",
+      "uav_id": "UAV_2"
+    },
+    {
+      "task_id": "STRIP_003",
+      "uav_id": "UAV_1"
+    },
+    {
+      "task_id": "STRIP_004",
+      "uav_id": "UAV_2"
+    },
+    {
+      "task_id": "STRIP_005",
+      "uav_id": "UAV_1"
+    },
+    {
+      "task_id": "STRIP_006",
+      "uav_id": "UAV_2"
+    }
+  ],
+  "unassigned": []
+}

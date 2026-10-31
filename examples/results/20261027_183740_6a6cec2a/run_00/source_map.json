@@ -1,0 +1,28 @@
+[
+  {
+    "module": "FLEET",
+    "file": "scenario.txt",
+    "start_line": 4,
+    "end_line": 10
+  },
+  {
+    "module": "FLEET",
+    "instance": "UAV_1",
+    "file": "scenario.txt",
+    "start_line": 12,
+    "end_line": 21
+  },
+  {
+    "module": "FLEET",
+    "instance": "UAV_2",
+    "file": "scenario.txt",
+    "start_line": 23,
+    "end_line": 33
+  },
+  {
+    "module": "MONITOR",
+    "file": "scenario.txt",
+    "start_line": 35,
+    "end_line": 50
+  }
+]
