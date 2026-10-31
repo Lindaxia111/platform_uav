@@ -19,7 +19,8 @@
 - 本次验证日志：`artifacts/verification/20261031_164124_5ad169f8/`；真实开发实验：`artifacts/runs/20261031_164128_4c19008b/`。覆盖率 A=82.333%、B=94.333%，两者仍未达到默认 95% 需求；这是运行完成而非需求达标，结果与既有示例一致。
 - 成功测试的新用例产物已自动清理；82 个历史测试文件仍在归档目录。整理后检测到当前目录存在尚无提交的 Git 仓库（master），所有项目文件尚未跟踪；本次未创建提交。
 - 已按用户要求创建首次提交 `3ac2f73`（`feat: initialize UAV algorithm validation workbench`），共 79 个文件，包括源码、启动与检查脚本、开发规范及已验证演示；本地产物、缓存和历史归档通过 `.gitignore` 排除。
-- 用户指定 GitHub 仓库 `https://github.com/Lindaxia111/platform_uav.git`，已配置为 `origin`；关联前检查远程为空。当前开发分支为 `master`，远程目标为 `origin/master`。后续操作前使用 `git status --short --branch` 和 `git log -1` 核对提交与同步状态。
+- 用户指定 GitHub 仓库 `https://github.com/Lindaxia111/platform_uav.git`，已配置为 `origin`。完整项目最初推送到 `master`，但 GitHub 默认分支 `main` 另外存在仅含仓库名称 README 的初始提交 `58b44ca`，导致用户在首页看不到代码。
+- 本次将完整项目与远程 `main` 初始提交合并，保留双方历史；README 使用完整项目说明。当前开发与推送分支统一为 `main`，跟踪目标为 `origin/main`；`master` 保留作历史分支。后续使用 `git status --short --branch` 和 `git log -1` 核对提交与同步状态。
 - 首次提交前补充 `.gitattributes`：`examples/results/** -text -whitespace`，保留历史证据及算法快照的原始字节，防止换行转换使快照哈希失配；只读证据豁免空白格式检查，开发源码继续检查。
 
 ## 启动与结果路径
